@@ -41,9 +41,12 @@ export class MadelbrotSet {
         let complex_number = { real: x, img: y } //C -> CONST
         let Zn = { real: x, img: y }
         let count = 0
+        let distance = 0
 
         do {
-            if (this.#modulusComplexNumber(Zn) > 2) 
+           // console.log(this.#modulusComplexNumber(Zn) + "\n")
+            distance = this.#modulusComplexNumber(Zn)
+            if (distance  > 2) 
                 return [count, false]
 
             // f(Z) = Z² + C
@@ -51,7 +54,7 @@ export class MadelbrotSet {
             
         } while (++count < this.#MAX_ITERATIONS)
 
-        return [0, true]
+        return [count, true]
 
     }
 
