@@ -44,7 +44,6 @@ export class MadelbrotSet {
         let distance = 0
 
         do {
-           // console.log(this.#modulusComplexNumber(Zn) + "\n")
             distance = this.#modulusComplexNumber(Zn)
             if (distance  > 2) 
                 return [count, false]
