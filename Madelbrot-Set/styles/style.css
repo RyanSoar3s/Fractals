@@ -1,12 +1,4 @@
 @charset "UTF-8";
-:root {
-    --b: rgb(0, 4, 255);
-    --d: darkblue;
-    --c: cyan;
-    --r: rgb(255, 0, 0);
-    --o: orange;
-
-}
 /* RESET */
 
 * {
