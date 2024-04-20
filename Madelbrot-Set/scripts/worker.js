@@ -1,52 +1,51 @@
 import { MadelbrotSet } from "./mandelbrotSet.js"
 
-let array 
 let WIDTH
 let HEIGHT
 let ms
+let x_start
+let x_end
+let y_start
+let y_end
 
 onmessage = (e) => {
-    WIDTH = e.data[0]
-    HEIGHT = e.data[1]
+    const { configurable } = e.data
 
-    ms = new MadelbrotSet()
-    array = []
+    if (configurable) {
+        const { w, h, x, y } = e.data
+        WIDTH = w
+        HEIGHT = h
 
-    function choose_color(count) {
-        let color =  ""
+        x_start = x.start
+        x_end = x.end - x.start
 
-        if (count < 66) {
-            color = `rgb(${count * 3}, ${count * 7}, 110)`
+        y_start = y.start
+        y_end = y.end - y.start
+
+        ms = new MadelbrotSet()
     
+    }
+
+    else {
+        let { col } = e.data
+        let array = []
+
+        const calculatePoint = (x, y) => {
+            x = x_start + (x / WIDTH) * x_end
+            y = y_start + (y / HEIGHT) * y_end
+
+            return { x, y }
+
         }
 
-        else {
-            color = `rgb(${count * 7}, 225, ${count * 3})`
-    
+        for (let row = 0; row < HEIGHT; row++) {
+            let { x , y } = calculatePoint(col, row)
+            array[row] = ms.checkNumberInSet(x, y)
+
         }
-    
-        return color
+
+        postMessage({ col, array })
 
     }
 
-    function calculateCol(i) {
-        for (let j = 0; j < HEIGHT; j++) {
-            let x = -2 + (i / WIDTH) * 3
-            let y = -1 + (j / HEIGHT) * 2
-            let [count, numberInSet] = ms.checkNumberInSet(x, y)
-            let color = (numberInSet) ? "black" : choose_color(count)
-            let row = [i, j, color]
-            array.push(row)
-            
-        }
-
-        postMessage(array)
-        array = []
-
-        if (i < WIDTH - 1) {
-            setTimeout(() => calculateCol(i + 1), 0)
-        }
-    }
-
-    calculateCol(0)
 }

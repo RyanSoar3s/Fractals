@@ -2,7 +2,7 @@ export class MadelbrotSet {
     #MAX_ITERATIONS
 
     constructor() {
-        this.#MAX_ITERATIONS = 100
+        this.#MAX_ITERATIONS = 1000
 
     }
 
@@ -39,7 +39,7 @@ export class MadelbrotSet {
  
     checkNumberInSet(x, y) {
         let complex_number = { real: x, img: y } //C -> CONST
-        let Zn = { real: x, img: y }
+        let Zn = { real: 0, img: 0 } //Zn = 0 + 0i
         let count = 0
         let distance = 0
 
@@ -53,7 +53,7 @@ export class MadelbrotSet {
             
         } while (++count < this.#MAX_ITERATIONS)
 
-        return [count, true]
+        return [0, true]
 
     }
 
