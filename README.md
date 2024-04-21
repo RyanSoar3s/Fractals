@@ -39,7 +39,7 @@ Vou deixar as imagens do resultado que obtive após a conclusão desse projeto.
 
 ### Imagem 4
 
-<a href="Mandelbrot-Set/screenshots/fractal-img-4.png"a lt="imagem-4"></a>
+<a href="Mandelbrot-Set/screenshots/fractal-img-4.png" alt="imagem-4"></a>
 
 
 ### Imagem 5
