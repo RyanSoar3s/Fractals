@@ -6,7 +6,7 @@ export class MadelbrotSet {
 
     }
 
-    #expTwoComplexNumber(complex_number) {
+    #squareComplexNumber(complex_number) {
         /*
             (3 + 5i)² = 3² + 2 * 3 * 5i + (5i)² = 9 + 30i + 25i² = 9 + 30i + 25(-1) = 9 + 30i - 25 = -16 + 30i
         */
@@ -38,22 +38,23 @@ export class MadelbrotSet {
     }
  
     checkNumberInSet(x, y) {
-        let complex_number = { real: x, img: y } //C -> CONST
-        let Zn = { real: 0, img: 0 } //Zn = 0 + 0i
+        const complex_number = { real: x, img: y } //C -> CONST
+        let Zn = { real: x, img: y } //Zn = (0 + 0i)² + C = C
         let count = 0
         let distance = 0
+
 
         do {
             distance = this.#modulusComplexNumber(Zn)
             if (distance  > 2) 
-                return [count, false]
+                return [this.#MAX_ITERATIONS, count, false]
 
             // f(Z) = Z² + C
-            Zn = this.#sumComplexNumber(this.#expTwoComplexNumber(Zn), complex_number)
+            Zn = this.#sumComplexNumber(this.#squareComplexNumber(Zn), complex_number)
             
         } while (++count < this.#MAX_ITERATIONS)
 
-        return [0, true]
+        return [0, 0, true]
 
     }
 

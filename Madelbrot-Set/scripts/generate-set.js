@@ -1,7 +1,7 @@
 let canvas = document.getElementById("canvas")
 let draw = canvas.getContext("2d")
-let x_axis = { start: -2, end: 1}
-let y_axis = { start: -1, end: 1}
+let x_axis = { start: -2, end: 1 }
+let y_axis = { start: -1, end: 1 }
 let cols = []
 
 const worker = new Worker("./scripts/worker.js", { type: "module" })
@@ -9,20 +9,36 @@ const HEIGHT = canvas.height
 const WIDTH = canvas.width
 const ZOOM_FACTOR = 0.1
 
-function choose_color(count) {
+function choose_color(count, maxIter) {
     let color =  ""
+    let r = 0
+    let g = 0
+    let b = 0
+    let scale = count / maxIter
 
-    if (count < 66) {
-        color = `rgb(${count * 3}, ${count * 7}, 110)`
+    if (scale <= 0.3) {
+        g = Math.floor(255 * 20 *  scale)
+        b = Math.floor(255 * 60 * scale)
+        color = `rgb(${r}, ${g}, ${b})`
+
+    }
+
+    else if (scale <= 0.5) {
+        g = Math.floor(255 * 55 * scale)
+        b = 110
+        color = `rgb(${r}, ${g}, ${b})`
 
     }
 
     else {
-        color = `rgb(${count * 7}, 225, ${count * 3})`
+        g = 50
+        b = Math.floor(255 * 25 * scale)
+        color = `rgb(${r}, ${g}, ${b})`
 
     }
 
     return color
+
 
 }
 
@@ -50,8 +66,8 @@ const drawSet =  (e) => {
     let { col, array } = e.data
 
     for (let i = 0; i < HEIGHT; i++){
-        let [ count, numberInSet ] = array[i]
-        let color = (numberInSet) ? "black" : choose_color(count)
+        let [ maxIter, count, numberInSet ] = array[i]
+        let color = (numberInSet) ? "black" : choose_color(count, maxIter)
         draw.fillStyle = color
         draw.fillRect(col, i, 1, 1)
         

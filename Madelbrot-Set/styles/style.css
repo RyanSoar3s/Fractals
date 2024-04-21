@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* RESET */
 
 * {
@@ -17,7 +18,7 @@ html, body {
 }
 
 body {
-    background-image: linear-gradient(to top, rgb(0, 0, 150), rgb(0, 0, 130), rgb(0, 0, 83) 60%);
+    background-image: linear-gradient(to top, rgb(0, 32, 119), rgb(0, 21, 78), rgb(0, 10, 36) 60%);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -39,6 +40,7 @@ main {
 
 main div.canvas {
     height: 100%;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -48,5 +50,12 @@ main div.canvas {
 main canvas {
     image-rendering: pixelated;
     border: 5px solid black;
+
+}
+
+main div.canvas > p {
+    margin-top: 20px;
+    color: white;
+    font-size: 1.2em;
 
 }
