@@ -26,26 +26,26 @@ Vou deixar as imagens do resultado que obtive após a conclusão desse projeto.
 
 ### Imagem 1
 
-<a src="Mandelbrot-Set/screenshots/fractal-img-1.png" alt="imagem-1"></a>
+<img src="Mandelbrot-Set/screenshots/fractal-img-1.png" alt="imagem-1"></img>
 
 ### Imagem 2
 
-<a src="Mandelbrot-Set/screenshots/fractal-img-2.png" alt="imagem-2"></a>
+<img src="Mandelbrot-Set/screenshots/fractal-img-2.png" alt="imagem-2"></img>
 
 
 ### Imagem 3
 
-<a src="Mandelbrot-Set/screenshots/fractal-img-3.png" alt="imagem-3"></a>
+<img src="Mandelbrot-Set/screenshots/fractal-img-3.png" alt="imagem-3"></img>
 
 ### Imagem 4
 
-<a src="Mandelbrot-Set/screenshots/fractal-img-4.png" alt="imagem-4"></a>
+<img src="Mandelbrot-Set/screenshots/fractal-img-4.png" alt="imagem-4"></img>
 
 
 ### Imagem 5
 
-<a src="Mandelbrot-Set/screenshots/fractal-img-5.png" alt="imagem-5"></a>
+<img src="Mandelbrot-Set/screenshots/fractal-img-5.png" alt="imagem-5"></img>
 
 ### Imagem 6
 
-<a src="Mandelbrot-Set/screenshots/fractal-img-6.png" alt="imagem-6"></a>
+<img src="Mandelbrot-Set/screenshots/fractal-img-6.png" alt="imagem-6"></img>
