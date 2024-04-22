@@ -8,7 +8,7 @@ perceber que há figuras menores e que se assemelham às figuras grandes.
 
 Um dos fractais mais conhecidos é o descoberto pelo matemático Benoit B. Mandelbrot. 
 O conjunto de Mandelbrot surge a partir da expressao <p> Z<sub>n + 1</sub> = Z<sub>n</sub><sup>2</sup> + C </p>, onde C é um número complexo qualquer.
-A expressão começa em <p> Z<sub>0</sub> = 0<sup>2</sup> + C </p> e a partir daí os valores serão incrementados na fórmula.
+A expressão começa em <p> Z<sub>0</sub> = 0</p> e a partir daí os valores serão incrementados na fórmula.
 Um detalhe importante é que o valor só é considerado como pertencente ao conjunto caso o módulo de Zn 
 seja menor ou igual a 2. Caso contrário, está fora do conjunto.
 
