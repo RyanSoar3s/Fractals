@@ -17,7 +17,7 @@ seja menor ou igual a 2. Caso contrário, está fora do conjunto.
 
 Fascinado com esse conceito matemático, decidi criar uma representação desse conjunto. Foi desafiador.
 Criei um programa em JS que gera esse fractal. Utilizei o próprio Canvas para renderizar a imagem no navegador.
-Os dos maiores desafios foi de como otimizar meu programa e aplicar o zoom. Pesquisando muito, encontrei
+Um dos maiores desafios foi de como otimizar meu programa e aplicar o zoom. Pesquisando muito, encontrei
 um outro usuário do GitHub e me inspirei na ideia dele (https://dev.to/foqc/mandelbrot-set-in-js-zoom-in-2hmc).
 
 Vou deixar as imagens do resultado que obtive após a conclusão desse projeto.
